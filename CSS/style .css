@@ -11,3 +11,33 @@ div ~ p{
     background-color: aqua;
     color: aliceblue;
 }
+
+p:hover{
+    background-color: cadetblue;
+    font-size: medium;
+    color: chocolate;
+}
+
+p::after{
+    content:"React development";
+    background-color: blue;
+    color: white;
+}
+
+p::before{
+    content:"React development";
+    background-color: greenyellow;
+    color: white;
+}
+
+p::selection{
+    background-color: red;
+}
+
+p:nth-child(2){
+    background-color: black;
+}
+
+div p:nth-of-type(1){
+    background-color: blueviolet;
+}
