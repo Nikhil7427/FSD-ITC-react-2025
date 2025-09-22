@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info</title>
+    <style>
+      
+        #disp {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgb(50, 88, 72);
+            color: cyan;
+            border-radius: 8px;
+        }
+    </style>
+    <script>
+        function getData(){
+            const name = document.getElementById('name').value;
+            const branch = document.getElementById('branch').value;
+            const section = document.getElementById('section').value;
+            const college = document.getElementById('college').value;
+            const location = document.getElementById('location').value;
+            const university = document.getElementById('university').value;
+
+            document.getElementById('disp').innerHTML = `
+                <h2 style="color:yellow; text-align:center;">User Info</h2>
+                <p><b>Name:</b> ${name}</p>
+                <p><b>Branch:</b> ${branch}</p>
+                <p><b>Section:</b> ${section}</p>
+                <p><b>College:</b> ${college}</p>
+                <p><b>Location:</b> ${location}</p>
+                <p><b>University:</b> ${university}</p>
+            `;
+        }
+    </script>
+</head>
+<body>
+    <h1>Enter User Details</h1>
+        Name : 
+        <input type="text" id="name" placeholder="Enter Name">
+        <br><br>
+        Branch : 
+        <input type="text" id="branch" placeholder="Enter Branch">
+        <br><br>
+        Section : 
+        <input type="text" id="section" placeholder="Enter Section">
+        <br><br>
+        College : 
+        <input type="text" id="college" placeholder="Enter College">
+        <br><br>
+        Location : 
+        <input type="text" id="location" placeholder="Enter Location">
+        <br><br>
+        University : 
+        <input type="text" id="university" placeholder="Enter University">
+        <br><br>
+        <button onclick="getData()" >Submit</button>
+    
+
+    <div id="disp"></div>
+</body>
+</html>
