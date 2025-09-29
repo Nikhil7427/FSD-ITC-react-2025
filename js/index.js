@@ -96,8 +96,33 @@ const myPromise = new Promise((resolve, reject)=>{
 //     console.log("All the resources have closed succesfully");
 // })
 
-async function handleData(){
-    const result = await myPromise;
-    console.log(result);
+// async function handleData(){
+//     const result = await myPromise;
+//     console.log(result);
+// }
+// handleData();
+
+const button = document.getElementById('btn');
+const disp = document.getElementById('disp');
+let table = `<table border = 1>`;
+async function fetchData(){
+    disp.innerHTML="<h2>Data is loading...</h2>"
+    const response = await fetch('https://dummyjson.com/recipes');
+    const jasonData = await response.json();
+    console.log(jasonData.recipes);  
+    //disp.innerHTML=`<h2>${jasonData.recipes[0].name} ${jasonData.recipes}</h2>`
+    jasonData.recipes.forEach(element => {
+        table += `<tr>
+        <td><img src=${element.image} height=200 width=200 alt='image'></td>
+        <td>${element.id}</td>
+        <td style ="color:blue; background-color:#;">${element.name}</td>
+        <td >${element.ingredients}</td>
+        <td>${element.instructions}</td>
+        </tr>`
+        
+    });
+
+    table+=`</table>`;
+    disp.innerHTML=table;
 }
-handleData();
+button.addEventListener('click', fetchData);
