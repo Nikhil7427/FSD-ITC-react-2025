@@ -1,0 +1,10 @@
+
+.container {
+    height: 400px;
+    width: 200px;
+    border: 10px solid brown;
+    margin-left: 10px;
+    background-color: aliceblue;
+    color: black;
+    padding-left: 100px;
+}
